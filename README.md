@@ -1,5 +1,5 @@
 ## Deploying Statistical Models using Flask and Python
-This is a project to elaborate how to deploy a atatistical model from the VARMAX family using Flask API and production ready docker (docker-compose) file.
+This is a project to elaborate how to deploy a statistical model from the VARMAX family using a combination of Flask API deployed using a production ready docker (docker-compose) file.
 
 
 ### Project Structure
