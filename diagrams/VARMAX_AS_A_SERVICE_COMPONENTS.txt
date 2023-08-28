@@ -1,0 +1,17 @@
+@startuml
+
+
+package "Docker Image" {
+  HTTP->[Apache Web Server] 
+  WSGI - [Python Flask App] 
+  [Pickle Model File]
+}
+
+node "Preprocessing Step" {
+  [Model Serialization] #bbddee
+  [Model Instantiation]#bbddee
+  [Model Optimization] #bbddee
+  [Data Loading] #bbddee
+}
+
+@enduml

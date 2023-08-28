@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+    varmax:
+        build: .
+        ports:
+        - "80:80"
+        restart: always

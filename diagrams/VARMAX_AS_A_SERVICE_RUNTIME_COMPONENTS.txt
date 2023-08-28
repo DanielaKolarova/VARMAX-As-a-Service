@@ -1,0 +1,15 @@
+@startuml
+caption VARMAX-AS-A-Service
+
+:User: as u
+[Apache Web Server] as AS
+[Flask Web App] as FWA
+[VARMAX] as VX #bbddee
+[Pickle File] as PF #bbddee
+
+u -> AS
+AS -> FWA : REST call 
+FWA -> VX : call model
+VX ..> PF : deserialize model
+
+@enduml
