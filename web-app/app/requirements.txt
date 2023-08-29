@@ -1,5 +1,5 @@
 flask
 flasgger
 numpy
-pandas
+pandas<2.0.0
 statsmodels

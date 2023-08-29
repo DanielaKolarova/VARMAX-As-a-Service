@@ -23,7 +23,7 @@ RUN pip install -r /var/www/varmax-as-a-service/app/requirements.txt
 
 # Copy over the apache configuration file and enable the site
 COPY ./apache-flask.conf /etc/apache2/sites-available/apache-flask.conf
-# Copy over the wsgi file, run.py and the app and the saved models
+# Copy over the wsgi file, run.py, the app and the saved models
 COPY ./ /var/www/varmax-as-a-service/
 
 RUN a2dissite 000-default.conf

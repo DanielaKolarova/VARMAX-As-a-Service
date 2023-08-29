@@ -33,7 +33,9 @@ def test_model_prediction():
     comparison_df = pd.concat([endog_test, predict], axis=1)
     
     print(comparison_df)
-
+    print(comparison_df.to_json(orient='records'))
+    
+    
 
 def load_data():
     macro_data = sm.datasets.macrodata.load_pandas()

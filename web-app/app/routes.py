@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.statespace.varmax import VARMAX
 
+# declare constants 
+
 with open('/var/www/varmax-as-a-service/savedmodels/varmax_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
     
@@ -24,9 +26,9 @@ def about():
 @app.route('/varmax_predict')
 def predict_with_varmax():
     """ Endpoint returning a macroeconomic time series prediction based on a statistical model
-    ---    
+    ---
     parameters:
-        - name: realinv
+      - name: realinv
         in: query
         type: number
         required: true
@@ -46,30 +48,30 @@ def predict_with_varmax():
         in: query
         type: number
         required: true
-    - name: tbilrate
+      - name: tbilrate
         in: query
         type: number
         required: true
-    - name: unemp
+      - name: unemp
         in: query
         type: number
         required: true
-    - name: unemp
+      - name: pop
         in: query
         type: number
         required: true
-    - name: pop
+      - name: infl
         in: query
         type: number
         required: true
-    - name: infl
+      - name: realint
         in: query
         type: number
         required: true
-    - name: realint
-        in: query
-        type: number
-        required: true
+    responses:
+      200:
+        description: "Predicted data"
+      
     """
     
     realinv = request.args.get("realinv")
@@ -86,6 +88,11 @@ def predict_with_varmax():
     exog_vars = np.array([[realinv, realgovt, realdpi, cpi, m1, tbilrate, unemp, pop, infl, realint]]);
     
     prediction = model.predict(steps=len(exog_vars), exog = exog_vars)
+    prediction = prediction.reset_index(drop=True)
+    
+    
+    
+    print(prediction)
     
     return str(prediction)
 
