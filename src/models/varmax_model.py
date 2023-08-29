@@ -19,9 +19,9 @@ def run_model_pipeline():
         - Load data
         - Divide into train and test dataset (test dataset is not used for now)
         - Prepare exogenous variables
-        - Find optimal parameters (p, q) model
-        - Instatiate model with the optimal parameters identified
-        - Serialize the instatiated model to a pickle file 
+        - Find optimal model parameters (p, q) model
+        - Instantiate model with the optimal parameters identified
+        - Serialize the instantiated model to a pickle file 
     """
     
     data = load_data()
