@@ -29,6 +29,7 @@ or using docker-compose within web-app run
  - docker-compose up -d
  - 
 
-3. Navigate to URL http://127.0.0.1:80 (or) http://localhost:80
+3. Navigate to URL http://127.0.0.1:80 (or) http://localhost:80 You should be able to view the homepage.
 
-You should be able to view the homepage.
+4. To access MinIO web console navigate to http://localhost:9101/ (or) http://127.0.0.1:9101/
+

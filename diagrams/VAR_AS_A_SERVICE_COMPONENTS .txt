@@ -1,0 +1,16 @@
+@startuml
+
+node "Model Preparation Step" {
+  [Data Loading] #bbddee
+  [Model Optimization] #bbddee
+  [Model Instantiation]#bbddee
+  [Model Serialization] #bbddee
+  [Model Storage] #bbddee
+}
+
+package "Docker Compose" {
+  [Apache Web Server] -> [Python Flask App]
+  [Python Flask App] -> [MinIO]
+}
+
+@enduml

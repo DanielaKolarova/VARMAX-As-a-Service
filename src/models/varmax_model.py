@@ -26,7 +26,7 @@ def run_model_pipeline():
     
     data = load_data()
 
-    train, test = train_test_split(data, test_size=0.2)
+    train, test = train_test_split(data, test_size=0.1, shuffle=False)
     
     endog_train = train[['realgdp', 'realcons']]
     exog_cols = data.columns.drop(['year', 'quarter', 'realgdp', 'realcons'])

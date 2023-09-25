@@ -3,3 +3,5 @@ flasgger
 numpy
 pandas<2.0.0
 statsmodels
+botocore
+boto3

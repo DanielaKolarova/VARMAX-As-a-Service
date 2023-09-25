@@ -1,0 +1,17 @@
+@startuml
+caption VAR-AS-A-Service
+
+:User: as u
+[Apache Web Server] as AS
+[Flask Web App] as FWA
+[VAR] as VAR #bbddee
+[MinIO] as MIO #bbddee
+[Pickle File] as PF #bbddee
+
+u -> AS
+AS -> FWA : REST call 
+FWA -> VAR : call model
+VAR -> MIO: get model file
+MIO ..> PF : find pickle file
+
+@enduml
